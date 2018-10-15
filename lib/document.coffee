@@ -3,16 +3,13 @@ PDFDocument - represents an entire PDF document
 By Devon Govett
 ###
 
-stream = require 'stream'
 fs = require 'fs'
 PDFObject = require './object'
 PDFReference = require './reference'
 PDFPage = require './page'
 
-class PDFDocument extends stream.Readable
+class PDFDocument
   constructor: (@options = {}) ->
-    super
-
     # PDF version
     @version = 1.3
 
@@ -187,7 +184,7 @@ class PDFDocument extends stream.Readable
       font.finalize()
 
     @endOutline()
-    
+
     @_root.end()
     @_root.data.Pages.end()
 

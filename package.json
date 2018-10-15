@@ -41,6 +41,7 @@
   },
   "scripts": {
     "prepublish": "make js",
+    "postinstall": "make js",
     "postpublish": "make clean"
   },
   "main": "js/document",
