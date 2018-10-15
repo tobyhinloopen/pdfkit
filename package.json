@@ -43,7 +43,7 @@
     "prepublish": "npm run build",
     "postinstall": "npm run build",
     "postpublish": "make clean",
-    "build": "coffee -o js -c lib && cp -r lib/font/data js/font/data"
+    "build": "node_modules/.bin/coffee -o js -c lib && cp -r lib/font/data js/font/data"
   },
   "main": "js/document",
   "browserify": {
