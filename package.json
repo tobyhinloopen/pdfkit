@@ -40,9 +40,10 @@
     "png-js": ">=0.1.0"
   },
   "scripts": {
-    "prepublish": "make js",
-    "postinstall": "make js",
-    "postpublish": "make clean"
+    "prepublish": "npm run build",
+    "postinstall": "npm run build",
+    "postpublish": "make clean",
+    "build": "coffee -o js -c lib && cp -r lib/font/data js/font/data"
   },
   "main": "js/document",
   "browserify": {
